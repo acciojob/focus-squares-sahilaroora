@@ -15,46 +15,39 @@
     .square {
       width: 120px;
       height: 120px;
-      background-color: #E6E6FA; /* Lavender */
-      border: 2px solid #ccc;
+      background-color: #E6E6FA;
       transition: background-color 0.3s ease;
     }
   </style>
-
 </head>
 <body>
 
   <div class="container">
-    <div id="square1" class="square"></div>
-    <div id="square2" class="square"></div>
-    <div id="square3" class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
+    <div class="square"></div>
   </div>
 
   <script>
-    const square1 = document.getElementById("square1");
-    const square2 = document.getElementById("square2");
-    const square3 = document.getElementById("square3");
+    const squares = document.querySelectorAll(".square");
 
-    const squares = [square1, square2, square3];
-
-    squares.forEach((square, index) => {
-      square.addEventListener("mouseenter", () => {
-        squares.forEach((s, i) => {
+    squares.forEach((sq, index) => {
+      sq.addEventListener("mouseenter", () => {
+        squares.forEach((other, i) => {
           if (i !== index) {
-            s.style.backgroundColor = "#6F4E37"; // Coffee
+            other.style.backgroundColor = "#6F4E37";
           }
         });
       });
 
-      square.addEventListener("mouseleave", () => {
-        squares.forEach((s) => {
-          s.style.backgroundColor = "#E6E6FA"; // Lavender
-        });
+      sq.addEventListener("mouseleave", () => {
+        squares.forEach(s => s.style.backgroundColor = "#E6E6FA");
       });
     });
   </script>
 
 </body>
 </html>
+
 
 
