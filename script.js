@@ -1,4 +1,3 @@
-
 // Get all three squares
 const square1 = document.getElementById("square1");
 const square2 = document.getElementById("square2");
@@ -22,3 +21,4 @@ squares.forEach((square, index) => {
     });
   });
 });
+
